@@ -1448,6 +1448,9 @@
 		theft_target = WEAKREF(interacting_with)
 		ui_interact(user)
 		return ITEM_INTERACT_SUCCESS
+	if(iscash(interacting_with))
+		insert_money(interacting_with, user)
+		return ITEM_INTERACT_SUCCESS
 	return NONE
 
 /obj/item/card/id/advanced/chameleon/interact_with_atom_secondary(atom/interacting_with, mob/living/user, list/modifiers)
